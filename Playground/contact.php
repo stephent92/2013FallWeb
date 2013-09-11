@@ -37,8 +37,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li class="active"><a href="contact.php">Contact</a></li>
             <li><a href="links.php">Links</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -56,42 +56,38 @@
       </div>
     </div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello world!</h1>
-        <p>Welcome class of 2013 to Web Server Programming</p>
-        <p><a class="btn btn-success btn-lg">Learn more</a></p>
-      </div>
-    </div>
-
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary btn-md" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Important Points</h2>
-          <ul>
-			    <li>The three main links in the navbar work</li>
-			    <li>They are all centralized in one file</li>
-			    <li>They change apearance to show you which page you are on.</li>
-			    <li>These colunms start as three columns then reduce as the browser shrinks</li>
-		  </ul>
-          <p><a class="btn btn-primary btn-md" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-primary btn-md" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
-    </div> <!-- /container -->
-
-
+		<div class="well">
+			<h1>Hello world!</h1>
+		    <p>Welcome class of 2013 to Web Server Programming <a class="btn btn-default">Learn More</a></p>
+		</div>
+		    
+		<div class="row">
+		   	<div class="col-lg-8 col-lg-offset-2"> 
+		   		<h2>Contact Us</h2>
+			    <form class="form-horizontal">
+				  	<div class="form-group">
+					    <label for="inputEmail1" class="col-md-2 control-label">Your Email</label>
+					    <div class="col-md-10">
+					      	<input type="text" class="form-control" id="inputEmail1" placeholder="Email">
+					    </div>
+				  	</div>
+				  	<div class="form-group">
+					    <label for="inputMessage" class="col-md-2 control-label">Message</label>
+					    <div class="col-md-10">
+					      	<textarea class="form-control" id="inputMessage" placeholder="Boy do I love you guys"></textarea>
+					    </div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-offset-2 col-md-10">
+							<input type="submit" class="btn" value="Submit"/>
+						</div>
+					</div>  			
+		  		</form>
+			</div>
+		</div>
+	</div>
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
