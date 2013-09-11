@@ -16,10 +16,10 @@
     <link href="jumbotron.css" rel="stylesheet">
 
 	<style type="text/css">
-    	body 
-    	{ 
-    		padding-top: 70px; 
-    	}
+      body 
+      { 
+        padding-top: 70px; 
+      }
     </style>
   </head>
 

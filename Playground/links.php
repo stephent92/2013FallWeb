@@ -2,8 +2,8 @@
 
     <div class="container">
 		<div class="well">
-			<h1>Hello world!</h1>
-		    <p>Welcome class of 2013 to Web Server Programming <a class="btn btn-default">Learn More</a></p>
+		  <h1>Hello world!</h1>
+		  <p>Welcome class of 2013 to Web Server Programming <a class="btn btn-default">Learn More</a></p>
 		</div>
 
 	    <div class="media">
@@ -42,11 +42,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-    	window.onload=function changeActive()
-    	{
-    		document.getElementById("Links").classList.add("active");
-    	}
+    <script type="text/javascript">
+      window.onload=function changeActive()
+      {
+        document.getElementById("Links").classList.add("active");
+      }
     </script>
   </body>
 </html>
