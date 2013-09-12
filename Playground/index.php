@@ -1,9 +1,16 @@
-<? include 'include.php'; ?>
+<? 
+	include 'include.php'; 
+	$pages = array('home'=> array('url'=> 'index.php', 'section'=> 'home', 'title'=> 'home'), 'links'=> 'links.php', 'contact'=> 'contact.php');
+	$location = 'home';
+	$name = $pages[$location];
+	$msg = "Hello $name[title]";
+?>
 	
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="container">
+      <pre><?print_r($pages);?></pre>
 	  <div class="jumbotron">
-	    <h1>Hello world!</h1>
+	    <h1><?=$msg?></h1>
 	      <p>Welcome class of 2013 to Web Server Programming</p>
 	      <a class="btn btn-success btn-lg">Learn More</a>
 	  </div>
