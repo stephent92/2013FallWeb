@@ -1,3 +1,24 @@
+<?
+	$pages = array(
+		array(
+			'url'=> 'index.php',
+			'section'=> 'home', 
+			'title'=> 'Home'),
+		array(
+			'url'=> 'links.php',
+			'section'=> 'links', 
+			'title'=> 'Links'),
+		array(
+			'url'=> 'contact.php',
+			'section'=> 'contact', 
+			'title'=> 'Contact Us'));	
+			
+		$pages[] = array(
+			'url'=> 'store.php',
+			'section'=> 'store', 
+			'title'=> 'Buy Our Stuff');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,9 +45,8 @@
   </head>
 
   <body>
-  	<div class="container">
-    <div class="navbar navbar-default">
-      
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
@@ -37,9 +57,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li id="Home"><a href="index.php">Home</a></li>
-            <li id="Contact"><a href="contact.php">Contact</a></li>
-            <li id="Links"><a href="links.php">Links</a></li>
+
+            <? foreach ($pages as $name => $data): ?>
+			   		<li class="<?=$data['section']?> ">
+			   			<a href="<?=$data['url']?>"> <?=$data['title']?> </a>
+			   		</li>
+			<? endforeach; ?>
+            
             <li id="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -55,3 +79,6 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
+    <pre class="container">
+    	<? echo json_encode($pages); ?>
+    </pre>

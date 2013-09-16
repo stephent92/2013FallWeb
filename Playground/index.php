@@ -1,16 +1,11 @@
 <? 
 	include 'include.php'; 
-	$pages = array('home'=> array('url'=> 'index.php', 'section'=> 'home', 'title'=> 'home'), 'links'=> 'links.php', 'contact'=> 'contact.php');
-	$location = 'home';
-	$name = $pages[$location];
-	$msg = "Hello $name[title]";
 ?>
 	
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="container">
-      <pre><?print_r($pages);?></pre>
 	  <div class="jumbotron">
-	    <h1><?=$msg?></h1>
+	    <h1>Hello world!</h1>
 	      <p>Welcome class of 2013 to Web Server Programming</p>
 	      <a class="btn btn-success btn-lg">Learn More</a>
 	  </div>
@@ -47,11 +42,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="Scripts/main.js"></script>
     <script type="text/javascript">
-      window.onload=function changeActive()
-      {
-        document.getElementById("Home").classList.add("active");
-      }
+    	$(function(){
+    		$(".nav .home").addClass("active");
+    	});
     </script>
   </body>
 </html>
