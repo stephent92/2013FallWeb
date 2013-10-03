@@ -1,3 +1,11 @@
+<?php include 'inc/_global.php'; ?>
+
+<?php
+	$conn = GetConnection();
+	$result = $conn->query('SELECT * FROM 2013Fall_Keywords');
+	$rs = $result->fetch_assoc();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,6 +22,9 @@
 		$name = 'Stephen';
 		include 'something.php';
 	?>
+	<pre>
+		<? print_r($rs); ?>
+	</pre>
 	
 	<span class="label label-success"><?= $msg . $name?></span>
 	
