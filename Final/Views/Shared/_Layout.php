@@ -34,20 +34,45 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="Keywords">
-            	<a href="../Keywords/"> Keywords</a>
-            </li>
             <li class="Users">
             	<a href="../Users/"> Users</a>
+            </li>
+            <li class="Addresses">
+            	<a href="../Addresses/"> Addresses</a>
+            </li>
+            <li class="ContactMethods">
+            	<a href="../ContactMethods/"> Contact Methods</a>
             </li>
             <li id="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+              	<li class="Keywords">
+            		<a href="../Keywords/"> Keywords</a>
+           		</li>
+              	<li class="Feedback">
+            		<a href="../Feedback/"> Feedback</a>
+            	</li>
+              	<li class="Inventory">
+	            	<a href="../Inventory/"> Inventory</a>
+	            </li>
+	            <li class="Suppliers">
+	            	<a href="../Suppliers/"> Suppliers</a>
+	            </li>
+				<li class="Wishlist">
+	            	<a href="../Wishlist/"> Wishlist</a>
+	            </li>
+	            <li class="WishlistItems">
+	            	<a href="../WishlistItems/"> Wishlist Items</a>
+	            </li>
+	            <li class="PaymentMethods">
+	            	<a href="../PaymentMethods/"> Payment Methods</a>
+	            </li>
+	            <li class="Orders">
+	            	<a href="../Orders/"> Orders</a>
+	            </li>
+	            <li class="TrackOrder">
+	            	<a href="../TrackOrder/"> Track Order</a>
+	            </li>
               </ul>
             </li>
           </ul>

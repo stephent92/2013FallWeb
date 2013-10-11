@@ -2,23 +2,24 @@
 
 <div class="container">
 	
-	<h2>Users</h2>
+	<h2>Contact Methods</h2>
 	
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Type</th>
+			<th>ID</th>
+			<th>Phone Number</th>
+			<th>Email</th>
 			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['FirstName']?></td> 
-				<td><?=$rs['LastName']?></td>
-				<td><?=$rs['UserTypes_id']?></td>
+				<td><?=$rs['id']?></td> 
+				<td><?=$rs['PhoneNumber']?></td>
+				<td><?=$rs['Email']?></td>
+
 				<td>
 					
 				</td>
