@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 	
-    <title>Bootstrap 101 Template</title>
+    <title>Final</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="jumbotron.css" rel="stylesheet">
 
@@ -34,30 +34,30 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="Users">
-            	<a href="../Users/"> Users</a>
-            </li>
-            <li class="Addresses">
-            	<a href="../Addresses/"> Addresses</a>
-            </li>
-            <li class="ContactMethods">
-            	<a href="../ContactMethods/"> Contact Methods</a>
-            </li>
+          	<li class="Keywords">
+            	<a href="../Keywords/"> Keywords</a>
+           	</li>
+           	<li class="Inventory">
+	            <a href="../Inventory/"> Inventory</a>
+	        </li>
+	        <li class="Suppliers">
+	            <a href="../Suppliers/"> Suppliers</a>
+	        </li>
             <li id="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
               <ul class="dropdown-menu">
-              	<li class="Keywords">
-            		<a href="../Keywords/"> Keywords</a>
-           		</li>
+              	<li class="Users">
+	            	<a href="../Users/"> Users</a>
+	            </li>
+	            <li class="Addresses">
+	            	<a href="../Addresses/"> Addresses</a>
+	            </li>
+	            <li class="ContactMethods">
+	            	<a href="../ContactMethods/"> Contact Methods</a>
+	            </li>
               	<li class="Feedback">
             		<a href="../Feedback/"> Feedback</a>
             	</li>
-              	<li class="Inventory">
-	            	<a href="../Inventory/"> Inventory</a>
-	            </li>
-	            <li class="Suppliers">
-	            	<a href="../Suppliers/"> Suppliers</a>
-	            </li>
 				<li class="Wishlist">
 	            	<a href="../Wishlist/"> Wishlist</a>
 	            </li>

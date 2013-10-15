@@ -8,12 +8,12 @@
 		<thead>
 		<tr>
 			<th>ID</th>
-			<th>Street</th>
 			<th>PO BOX</th>
-			<th>Zip Code</th>
-			<th>Country</th>
+			<th>Street</th>
 			<th>City</th>
 			<th>State</th>
+			<th>Country</th>
+			<th>Zip Code</th>
 			<th></th>
 		</tr>
 		</thead>
@@ -21,12 +21,12 @@
 		<? foreach ($model as $rs): ?>
 			<tr>
 				<td><?=$rs['id']?></td> 
-				<td><?=$rs['Street']?></td>
 				<td><?=$rs['PO BOX']?></td>
-				<td><?=$rs['ZIP']?></td>
-				<td><?=$rs['Country']?></td>
+				<td><?=$rs['Street']?></td>
 				<td><?=$rs['City']?></td>
 				<td><?=$rs['State']?></td>
+				<td><?=$rs['Country']?></td>
+				<td><?=$rs['ZIP']?></td>
 				<td>
 					
 				</td>

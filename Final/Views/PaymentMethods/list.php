@@ -8,8 +8,8 @@
 		<thead>
 		<tr>
 			<th>ID</th>
-			<th>Credit Card</th>
-			<th>Paypal</th>
+			<th>Number</th>
+			<th>Expiration</th>
 			<th></th>
 		</tr>
 		</thead>
@@ -17,8 +17,8 @@
 		<? foreach ($model as $rs): ?>
 			<tr>
 				<td><?=$rs['id']?></td> 
-				<td><?=$rs['Credit Card']?></td>
-				<td><?=$rs['Paypal']?></td>
+				<td><?=$rs['Number']?></td>
+				<td><?=$rs['Expiration']?></td>
 				<td>
 					
 				</td>
