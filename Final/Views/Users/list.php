@@ -20,7 +20,9 @@
 				<td><?=$rs['LastName']?></td>
 				<td><?=$rs['UserTypes_id']?></td>
 				<td>
-					
+					<a class="btn glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>"></a>
+					<a class="btn glyphicon glyphicon-pencil" href="?action=details&id=<?=$rs['id']?>"></a>
+					<a class="btn glyphicon glyphicon-trash" href="?action=details&id=<?=$rs['id']?>"></a>
 				</td>
 			</tr>
 		<? endforeach ?>

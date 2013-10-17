@@ -2,17 +2,12 @@
 
 class Users {
 	
-	static public function Get()
+	static public function Get($id=null)
 	{
-		$ret = array();
-		$conn = GetConnection();
-		$result = $conn->query('SELECT * FROM Users');
-		
-		while ($rs = $result->fetch_assoc()) {
-			$ret[] = $rs;
+		if(isset($id)){
+			return fetch_one("SELECT * FROM Users WHERE id=$id");
+		}else{
+			return fetch_all('SELECT * FROM Users');
 		}
-		
-		$conn->close();
-		return $ret;
 	}
 }
