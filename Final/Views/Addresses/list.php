@@ -7,7 +7,8 @@
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 		<tr>
-			<th>ID</th>
+			<th>User</th>
+			<th>Address Type</th>
 			<th>PO BOX</th>
 			<th>Street</th>
 			<th>City</th>
@@ -20,7 +21,8 @@
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['id']?></td> 
+				<td><?=$rs['Users_id']?></td> 
+				<td><?=$rs['AddressTypes_id']?></td>
 				<td><?=$rs['PO BOX']?></td>
 				<td><?=$rs['Street']?></td>
 				<td><?=$rs['City']?></td>
