@@ -10,7 +10,7 @@ switch ($action) {
 		break;
 	
 	case 'new':
-		$model = Users::Get($_REQUEST['id']);
+		$model = Users::Blank();
 		$view = 'edit.php';
 		break;
 		
