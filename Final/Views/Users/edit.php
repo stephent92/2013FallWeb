@@ -13,8 +13,9 @@
         <? endforeach; ?>
         </ul>
     <? endif; ?>
-        
+
 	<form action="?action=save" method="post" class="form-horizontal row">
+		<input type="hidden" name="id" value="<?=$model['id']?>"/>
 		
 		<div class="form-group <?=isset($errors['FirstName']) ? 'has error' : '' ?>">
 			<label for="FirstName" class="col-sm-2 control-label">First Name</label>

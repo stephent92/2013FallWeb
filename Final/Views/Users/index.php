@@ -16,14 +16,11 @@ switch ($action) {
 		
 	case 'save':
 		$errors = Users::Validate($_REQUEST);
-        if(!$errors)
-        {
+        if(!$errors){
          	$errors = Users::Save($_REQUEST);
         }                  
-         
-        if(!$errors)
-        {
-            header("Location: ?");   
+        if(!$errors){
+            header("Location: ?");
             die(); 
         }
         $model = $_REQUEST;
