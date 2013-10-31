@@ -1,7 +1,7 @@
 <?php
 
-class Users {
-	
+class Users 
+{	
 	static public function Get($id=null)
 	{
 		if(isset($id)){
@@ -23,6 +23,22 @@ class Users {
 			$sql =	" Insert Into Users (FirstName, LastName, Password, UserTypes_id) "
 				.	" Values ('$row2[FirstName]', '$row2[LastName]', '$row2[Password]', '$row2[UserTypes_id]') ";
 		}
+		
+		$conn->query($sql);
+		$error = $conn->error;
+		$conn->close();
+		
+		if($error){
+			return array('db_error' => $error);
+		}else{
+			return false;
+		}
+	}
+	
+	static public function Delete($id)
+	{
+		$conn = GetConnection();
+		$sql = " DELETE From Users WHERE id=$id ";
 		
 		$conn->query($sql);
 		$error = $conn->error;
