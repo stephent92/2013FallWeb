@@ -16,5 +16,7 @@
 		<dd><?=$model['City']?></dd>
 		<dt>State</dt>
 		<dd><?=$model['State']?></dd>
+		<dt>created_at</dt>
+		<dd><?=$model['created_at']?></dd>
 	</dl>
 </div>

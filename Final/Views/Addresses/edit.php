@@ -34,7 +34,7 @@
 		<div class="form-group <?=isset($errors['POBOX']) ? 'has error' : '' ?>">
 			<label for="POBOX" class="col-sm-2 control-label">POBOX</label>
 			<div class="col-sm-10">
-				<input type="POBOX" name="POBOX" id="POBOX" placeholder="PO BOX" class="form-control" value="<?=$model['POBOX']?>"/>
+				<input type="text" name="POBOX" id="POBOX" placeholder="PO BOX" class="form-control" value="<?=$model['POBOX']?>"/>
 				<? if(isset($errors['POBOX'])): ?><span class = "error"><?=$errors['POBOX'] ?> </span> <? endif;?>
 			</div>
 		</div>

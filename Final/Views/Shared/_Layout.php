@@ -70,9 +70,6 @@
 	            <li class="Orders">
 	            	<a href="../Orders/"> Orders</a>
 	            </li>
-	            <li class="TrackOrder">
-	            	<a href="../TrackOrder/"> Track Order</a>
-	            </li>
               </ul>
             </li>
           </ul>

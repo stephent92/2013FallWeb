@@ -1,6 +1,68 @@
 <?php
-	include_once '../../inc/_global.php';
+include_once '../../inc/_global.php';
+
+@$action = $_REQUEST['action'];
+@$format = $_REQUEST['format'];
+
+switch ($action) {
+	case 'details':
+		$model = Wishlist::Get($_REQUEST['id']);
+		$view = 'details.php';
+		$title = "Details For User: $model[Users_id]";
+		break;
 	
-	$model = Wishlist::Get();
-	$view = 'list.php';
-	include '../Shared/_Layout.php';
+	case 'new':
+		$model = Wishlist::Blank();
+		$view = 'edit.php';
+		$title = 'Add New Wishlist Item';
+		break;
+		
+	case 'save':
+		$errors = Wishlist::Validate($_REQUEST);
+        if(!$errors){
+         	$errors = Wishlist::Save($_REQUEST);
+        }                  
+        if(!$errors){
+            header("Location: ?");
+            die(); 
+        }
+        $model = $_REQUEST;
+        $view = 'edit.php';
+		$title = "Edit Wishlist For User: $model[Users_id]";
+		break;
+		
+	case 'edit':
+		$model = Wishlist::Get($_REQUEST['id']);
+		$view = 'edit.php';
+		$title = "Edit Wishlist For User: $model[Users_id]";
+		break;
+		
+	case 'delete':
+		if(isset($_POST['id'])){
+	        $errors = Wishlist::Delete($_REQUEST['id']);            
+	        if(!$errors){
+	            header("Location: ?");
+	            die(); 
+	        }
+		}
+		$model = Wishlist::Get($_REQUEST['id']);
+		$view = 'delete.php';
+		$title = "Delete Wishlist For User: $model[Users_id]";
+		break;
+		
+	default:
+		$model = Wishlist::Get();
+		$view = 'list.php';
+		$title = 'Wishlist';
+		break;
+}
+
+switch ($format) {
+	case 'dialog':
+		include '../Shared/_DialogLayout.php';
+		break;
+	
+	default:
+		include '../Shared/_Layout.php';
+		break;
+}

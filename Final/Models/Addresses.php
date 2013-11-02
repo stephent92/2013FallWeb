@@ -22,8 +22,7 @@ class Addresses
 				.  	" WHERE id=$row2[id] ";
 		}else{
 			$sql =	" Insert Into Addresses (Users_id, AddressTypes_id, POBOX, Street, City, State, Country, ZIP) "
-				.	" Values ('$row2[Users_id]', AddressTypes_id='$row2[AddressTypes_id]', 
-					  POBOX='$row2[POBOX]', Street='$row2[Street]', City='$row2[City]', State='$row2[State]', Country='$row2[Country]', ZIP='$row2[ZIP]')";
+				.	" Values ('$row2[Users_id]', '$row2[AddressTypes_id]', '$row2[POBOX]', '$row2[Street]', '$row2[City]', '$row2[State]', '$row2[Country]', '$row2[ZIP]')";
 		}
 		
 		$conn->query($sql);
@@ -55,12 +54,13 @@ class Addresses
 	
 	static public function Blank()
     {
-        return array('Users_id'=>null, 'Street'=>null, 'PO BOX'=>null, 'ZIP'=>null, 'Country'=>null, 'City'=>null, 'State'=>null, 'AddressTypes_id'=>null);
+        return array('id'=>null, 'Users_id'=>null, 'Street'=>null, 'PO BOX'=>null, 'ZIP'=>null, 'Country'=>null, 'City'=>null, 'State'=>null, 'AddressTypes_id'=>null);
     }
 
     static public function Validate($row)
     {
         $errors = array();
+        if(!$row['Users_id']) $errors['Users_id']=" is required";
         if(!$row['Street']) $errors['Street']=" is required";
         if(!$row['Country']) $errors['Country']=" is required";
         if(!$row['City']) $errors['City']=" is required";

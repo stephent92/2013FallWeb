@@ -8,13 +8,13 @@ switch ($action) {
 	case 'details':
 		$model = Addresses::Get($_REQUEST['id']);
 		$view = 'details.php';
-		$title = "Details for user: $model[Users_id]";
+		$title = "Details For user: $model[Users_id]";
 		break;
 	
 	case 'new':
 		$model = Addresses::Blank();
 		$view = 'edit.php';
-		$title = 'Create New User';
+		$title = 'Add New Address';
 		break;
 		
 	case 'save':
@@ -28,13 +28,13 @@ switch ($action) {
         }
         $model = $_REQUEST;
         $view = 'edit.php';
-		$title = "Edit user address: $model[Users_id]";
+		$title = "Edit User Address: $model[Users_id]";
 		break;
 		
 	case 'edit':
 		$model = Addresses::Get($_REQUEST['id']);
 		$view = 'edit.php';
-		$title = "Edit user address: $model[Users_id]";
+		$title = "Edit User Address: $model[Users_id]";
 		break;
 		
 	case 'delete':
@@ -47,7 +47,7 @@ switch ($action) {
 		}
 		$model = Addresses::Get($_REQUEST['id']);
 		$view = 'delete.php';
-		$title = "Delete address for user: $model[Users_id]";
+		$title = "Delete Address For User: $model[Users_id]";
 		break;
 		
 	default:

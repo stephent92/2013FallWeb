@@ -9,10 +9,8 @@ include_once __DIR__ . '/../Models/Feedback.php';
 include_once __DIR__ . '/../Models/Inventory.php';
 include_once __DIR__ . '/../Models/Suppliers.php';
 include_once __DIR__ . '/../Models/Wishlist.php';
-include_once __DIR__ . '/../Models/WishlistItems.php';
 include_once __DIR__ . '/../Models/PaymentMethods.php';
 include_once __DIR__ . '/../Models/Orders.php';
-include_once __DIR__ . '/../Models/TrackOrder.php';
 
 function GetConnection()
 {
