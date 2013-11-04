@@ -1,5 +1,5 @@
 <h3>
-	Are you sure you want to delete feedback for user 
+	Are you sure you want to delete feedback for user
 	<?=$model['Users_id'] ?>?
 </h3>
 <form action="?action=delete" method="post">

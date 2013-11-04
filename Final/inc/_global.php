@@ -25,6 +25,7 @@ function fetch_all($sql)
 	$conn = GetConnection();
 	$result = $conn->query($sql);
 	
+	//print_r($sql);
 	while ($rs = $result->fetch_assoc()) {
 		$ret[] = $rs;
 	}
@@ -35,6 +36,7 @@ function fetch_all($sql)
 
 function fetch_one($sql)
 {
+	//print_r($sql);
 	$arr = fetch_all($sql);
 	return $arr[0];
 }

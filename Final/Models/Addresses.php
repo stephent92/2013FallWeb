@@ -54,7 +54,7 @@ class Addresses
 	
 	static public function Blank()
     {
-        return array('id'=>null, 'Users_id'=>null, 'Street'=>null, 'PO BOX'=>null, 'ZIP'=>null, 'Country'=>null, 'City'=>null, 'State'=>null, 'AddressTypes_id'=>null);
+        return array('id'=>null, 'Users_id'=>null, 'Street'=>null, 'POBOX'=>null, 'ZIP'=>null, 'Country'=>null, 'City'=>null, 'State'=>null, 'AddressTypes_id'=>null);
     }
 
     static public function Validate($row)
