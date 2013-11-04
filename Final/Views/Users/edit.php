@@ -41,9 +41,13 @@
 		<div class="form-group <?=isset($errors['UserTypes_id']) ? 'has error' : '' ?>">
 			<label for="UserTypes_id" class="col-sm-2 control-label">User Type</label>
 			<div class="col-sm-10">
-				<input type="text" name="UserTypes_id" id="UserTypes_id" placeholder="User Type" class="form-control" value="<?=$model['UserTypes_id']?>"/>
-				<? if(isset($errors['UserTypes_id'])): ?><span class = "error"><?=$errors['UserTypes_id'] ?> </span> <? endif;?>
+				<select name="UserTypes_id" id="UserTypes_id" class="form-control" >
+					<? foreach(UserTypes::GetSelectListFor() as $keywordRs): ?>
+						<option <? if($model['UserTypes_id'] == $keywordRs['id']){ ?>selected="selected"<? } ?> value="<?$keywordRs['id']?>"><?=$keywordRs['UserTypes_id']?></option>
+					<? endforeach; ?>
+				</select>
 			</div>
+			<span class = "error"><?=$errors['UserTypes_id'] ?> </span>
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
@@ -52,3 +56,8 @@
 		</div>
 	</form>
 </div>
+<script type="text/javascript">
+	$(function(){
+		$("#UserTypes_id").val(<?=$model['UserTypes_id']?>);
+	})
+</script>

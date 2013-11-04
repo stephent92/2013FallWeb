@@ -1,32 +1,27 @@
 <?php
 
-class Keywords 
+class UserTypes 
 {	
 	static public function Get($id=null)
 	{
 		if(isset($id)){
-			return fetch_one("SELECT * FROM Keywords WHERE id=$id");
+			return fetch_one("SELECT * FROM UserTypes WHERE id=$id");
 		}else{
-			return fetch_all('SELECT * FROM Keywords');
+			return fetch_all('SELECT * FROM UserTypes');
 		}
-	}
-	
-	static public function GetSelectListFor($id)
-	{
-		return fetch_all("SELECT id, Name FROM Keywords WHERE 'Parent_id'=$id");
 	}
 	
 	static public function Save($row)
 	{
 		$conn = GetConnection();
-		$row2 = Keywords::Encode($row, $conn);
+		$row2 = UserTypes::Encode($row, $conn);
 		if($row['id']){
-			$sql = 	" UPDATE Keywords "
-				.  	" Set Name='$row2[Name]' "
+			$sql = 	" UPDATE UserTypes "
+				.  	" Set UserType='$row2[UserType]' "
 				.  	" WHERE id=$row2[id] ";
 		}else{
-			$sql =	" Insert Into Keywords (Name) "
-				.	" Values ('$row2[Name]') ";
+			$sql =	" Insert Into UserTypes (UserType) "
+				.	" Values ('$row2[UserType]') ";
 		}
 		
 		$conn->query($sql);
@@ -43,7 +38,7 @@ class Keywords
 	static public function Delete($id)
 	{
 		$conn = GetConnection();
-		$sql = " DELETE From Keywords WHERE id=$id ";
+		$sql = " DELETE From UserTypes WHERE id=$id ";
 		
 		$conn->query($sql);
 		$error = $conn->error;
@@ -58,13 +53,13 @@ class Keywords
 	
 	static public function Blank()
     {
-        return array('id'=>null, 'Name'=>null);
+        return array('id'=>null, 'UserType'=>null);
     }
 
     static public function Validate($row)
     {
         $errors = array();
-        if(!$row['Name']) $errors['Name']=" is required";
+        if(!$row['UserType']) $errors['UserType']=" is required";
         
         if(count($errors) == 0)
         {

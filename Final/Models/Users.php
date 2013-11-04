@@ -5,9 +5,14 @@ class Users
 	static public function Get($id=null)
 	{
 		if(isset($id)){
-			return fetch_one("SELECT * FROM Users WHERE id=$id");
+			return fetch_one("	SELECT U.*, K.UserType as UserType_Name
+							  	FROM Users U
+							  		Join UserTypes K ON U.UserTypes_id=K.id
+							  	WHERE U.id=$id");
 		}else{
-			return fetch_all('SELECT * FROM Users');
+			return fetch_all("	SELECT U.*, K.UserType as UserType_Name
+							  	FROM Users U
+							  		Join UserTypes K ON U.UserTypes_id=K.id");
 		}
 	}
 	
