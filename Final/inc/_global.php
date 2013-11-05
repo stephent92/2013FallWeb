@@ -11,6 +11,7 @@ include_once __DIR__ . '/../Models/Suppliers.php';
 include_once __DIR__ . '/../Models/Wishlist.php';
 include_once __DIR__ . '/../Models/PaymentMethods.php';
 include_once __DIR__ . '/../Models/Orders.php';
+include_once __DIR__ . '/../Models/UserTypes.php';
 
 function GetConnection()
 {

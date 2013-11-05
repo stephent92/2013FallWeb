@@ -66,8 +66,9 @@ class Users
         $errors = array();
         if(!$row['FirstName']) $errors['FirstName']=" is required";
         if(!$row['LastName']) $errors['LastName']=" is required";
-        if(!is_numeric($row['UserTypes_id'])) $errors['UserTypes_id']=" input has to be numeric";
+        if(!$row['UserTypes_id']) $errors['UserTypes_id']=" is required";
         
+       
         if(count($errors) == 0)
         {
             return false;

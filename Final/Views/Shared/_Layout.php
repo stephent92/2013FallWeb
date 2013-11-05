@@ -49,6 +49,9 @@
               	<li class="Users">
 	            	<a href="../Users/"> Users</a>
 	            </li>
+	            <li class="UserTypes">
+	            	<a href="../UserTypes/"> User Types</a>
+	            </li>
 	            <li class="Addresses">
 	            	<a href="../Addresses/"> Addresses</a>
 	            </li>

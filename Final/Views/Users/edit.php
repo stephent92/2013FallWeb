@@ -42,12 +42,12 @@
 			<label for="UserTypes_id" class="col-sm-2 control-label">User Type</label>
 			<div class="col-sm-10">
 				<select name="UserTypes_id" id="UserTypes_id" class="form-control" >
-					<? foreach(UserTypes::GetSelectListFor() as $keywordRs): ?>
-						<option <? if($model['UserTypes_id'] == $keywordRs['id']){ ?>selected="selected"<? } ?> value="<?$keywordRs['id']?>"><?=$keywordRs['UserTypes_id']?></option>
+					<? foreach(UserTypes::Get() as $keywordRs): ?>
+						<option <? if($model['UserTypes_id'] == $keywordRs['id']){ ?>selected="selected"<? } ?> value="<?$keywordRs['id']?>"><?=$keywordRs['UserType']?></option>
 					<? endforeach; ?>
 				</select>
 			</div>
-			<span class = "error"><?=$errors['UserTypes_id'] ?> </span>
+			<? if(isset($errors['UserTypes_id'])): ?><span class = "error"><?=$errors['UserTypes_id'] ?> </span> <? endif;?>
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">

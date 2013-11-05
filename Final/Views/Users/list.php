@@ -49,11 +49,11 @@
 <? function Scripts(){ ?>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
 	<script type="text/javascript">
-		$($function(){
-			$(".table").dataTable();
-			$(".alert .close").click(function(){
-				$(this).closest(".alert").slideUp();
-			});
-		})	
-	</script>
+	$(function(){
+        $(".table").dataTable();
+        $(".alert .close").click(function(){
+        	$(this).closest(".alert").slideUp();
+        });
+    })
+    </script>
 <? } ?>

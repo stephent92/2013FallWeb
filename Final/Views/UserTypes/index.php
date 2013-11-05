@@ -6,21 +6,21 @@ include_once '../../inc/_global.php';
 
 switch ($action) {
 	case 'details':
-		$model = Suppliers::Get($_REQUEST['id']);
+		$model = UserTypes::Get($_REQUEST['id']);
 		$view = 'details.php';
-		$title = "Details for: $model[Supplier]";
+		$title = "Details for: $model[UserType]";
 		break;
 	
 	case 'new':
-		$model = Suppliers::Blank();
+		$model = UserTypes::Blank();
 		$view = 'edit.php';
-		$title = 'Create New User';
+		$title = 'Create New UserType';
 		break;
 		
 	case 'save':
-		$errors = Suppliers::Validate($_REQUEST);
+		$errors = UserTypes::Validate($_REQUEST);
         if(!$errors){
-         	$errors = Suppliers::Save($_REQUEST);
+         	$errors = UserTypes::Save($_REQUEST);
         }                  
         if(!$errors){
             header("Location: ?");
@@ -28,32 +28,32 @@ switch ($action) {
         }
         $model = $_REQUEST;
         $view = 'edit.php';
-		$title = "Edit: $model[Supplier]";
+		$title = "Edit: $model[UserType]";
 		break;
 		
 	case 'edit':
-		$model = Suppliers::Get($_REQUEST['id']);
+		$model = UserTypes::Get($_REQUEST['id']);
 		$view = 'edit.php';
-		$title = "Edit: $model[Supplier]";
+		$title = "Edit: $model[UserType]";
 		break;
 		
 	case 'delete':
 		if(isset($_POST['id'])){
-	        $errors = Suppliers::Delete($_REQUEST['id']);            
+	        $errors = UserTypes::Delete($_REQUEST['id']);            
 	        if(!$errors){
 	            header("Location: ?");
 	            die(); 
 	        }
 		}
-		$model = Suppliers::Get($_REQUEST['id']);
+		$model = UserTypes::Get($_REQUEST['id']);
 		$view = 'delete.php';
-		$title = "Delete: $model[Supplier]";
+		$title = "Delete: $model[UserType]";
 		break;
 		
 	default:
-		$model = Suppliers::Get();
+		$model = UserTypes::Get();
 		$view = 'list.php';
-		$title = 'Suppliers';
+		$title = 'UserTypes';
 		break;
 }
 

@@ -2,23 +2,23 @@
 
 <div class="container">
 	
-	<h2>Suppliers</h2>
+	<h2>User Types</h2>
 	
-	<a href="?action=new">Add Supplier</a>
+	<a href="?action=new">Add User Type</a>
 
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 		<tr>
-			<th>Inventory ID</th>
-			<th>Supplier</th>
+			<th>ID</th>
+			<th>User Type</th>
 			<th></th>
 		</tr>
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
 			<tr>
-				<td><?=$rs['Inventory_id']?></td> 
-				<td><?=$rs['Supplier']?></td>
+				<td><?=$rs['id']?></td> 
+				<td><?=$rs['UserType']?></td>
 				<td>
 					<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
 					<a class="glyphicon glyphicon-pencil" href="?action=edit&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
