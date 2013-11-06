@@ -12,7 +12,7 @@
 	<? if(isset($_REQUEST['status']) && $_REQUEST['status'] == 'Saved'): ?>
 		<div class="alert alert-success">
 			<button type="button" class="close" aria-hidden="true">&times;</button>
-			<b>Success!</b> You're User has been saved.
+			<b>Success!</b> Your user has been saved.
 		</div>
 	<? endif ?>
 	

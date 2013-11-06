@@ -43,7 +43,7 @@
 			<div class="col-sm-10">
 				<select name="UserTypes_id" id="UserTypes_id" class="form-control" >
 					<? foreach(UserTypes::Get() as $keywordRs): ?>
-						<option <? if($model['UserTypes_id'] == $keywordRs['id']){ ?>selected="selected"<? } ?> value="<?$keywordRs['id']?>"><?=$keywordRs['UserType']?></option>
+						<option value="<?=$keywordRs['id']?>"><?=$keywordRs['UserType']?></option>
 					<? endforeach; ?>
 				</select>
 			</div>
