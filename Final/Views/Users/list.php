@@ -35,16 +35,7 @@
 		</thead>
 		<tbody>
 		<? foreach ($model as $rs): ?>
-			<tr class="<?= $rs['id']==$_REQUEST['id'] ? 'success' : '' ?>">
-				<td><?=$rs['FirstName']?></td> 
-				<td><?=$rs['LastName']?></td>
-				<td><?=$rs['UserType_Name']?></td>
-				<td>
-					<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>"></a>
-					<a class="glyphicon glyphicon-pencil" href="?action=edit&id=<?=$rs['id']?>"></a>
-					<a class="glyphicon glyphicon-trash" href="?action=delete&id=<?=$rs['id']?>"></a>
-				</td>
-			</tr>
+			<? include 'item.php'; ?>
 		<? endforeach ?>
 		</tbody>
 	</table>
@@ -56,6 +47,7 @@
 
 <? function Scripts(){ ?>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 	<script type="text/javascript">
 	$(function(){
         $(".table").dataTable();
@@ -69,26 +61,35 @@
         });
         */
        
-        $(".table a").click(function(){     
+        $(".table a").click(function(){
             if($(this).closest("tr").hasClass("success2")){
                 $(".success2").removeClass("success2");
                 $("#table-wrapper").removeClass("col-md-6").addClass("col-md-12");
-                $("#details").html('');                        
+                $("#details").html('');
             }else{
                 $(".success2").removeClass("success2");
                 $(this).closest("tr").addClass("success2");
                 $("#table-wrapper").removeClass("col-md-12").addClass("col-md-6");
                 
                 $("#details").load(this.href, {format: "plain"}, function(){
-                        $("#details form").submit(HandleSubmit);                                        
-                });                                
+                	$("#details form").submit(HandleSubmit);
+                });
             }
             
             return false;
         });
         
         var HandleSubmit = function (){
-            $("#details").html(JSON.stringify($(this).serializeArray()));
+        	var data = $(this).serializeArray();
+        	data.push({name:'format', value:'plain'});
+            $.post(this.action, data, function(results){
+            	if($(results).find("form").length){
+            		$("#details").html(results);
+            	}else{
+            		$(".success2").html($(results).html());
+            	}
+            });
+            
             return false;
         }
     })
