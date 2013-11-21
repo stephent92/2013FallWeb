@@ -1,6 +1,6 @@
 <?php
 
-class Inventory 
+class FrontEnd 
 {	
 	static public function Get($id=null)
 	{
@@ -17,11 +17,11 @@ class Inventory
 		$row2 = Inventory::Encode($row, $conn);
 		if($row['id']){
 			$sql = 	" UPDATE Inventory "
-				.  	" Set Quantity='$row2[Quantity]', Item='$row2[Item]', Price='$row2[Price]', Description='$row2[Description]', Img='$row2[Img]' "
+				.  	" Set Quantity='$row2[Quantity]', Item='$row2[Item]', Price='$row2[Price]', Img='$row2[Img]' "
 				.  	" WHERE id=$row2[id] ";
 		}else{
-			$sql =	" Insert Into Inventory (Quantity, Item, Price, Description, Img) "
-				.	" Values ('$row2[Quantity]', '$row2[Item]', '$row2[Price]', '$row2[Description]', '$row2[Img]') ";
+			$sql =	" Insert Into Inventory (Quantity, Item, Price, Img) "
+				.	" Values ('$row2[Quantity]', '$row2[Item]', '$row2[Price]', '$row2[Img]') ";
 		}
 		
 		$conn->query($sql);

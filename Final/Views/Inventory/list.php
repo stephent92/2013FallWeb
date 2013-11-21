@@ -12,6 +12,8 @@
 			<th>ID</th>
 			<th>Quantity</th>
 			<th>Item</th>
+			<th>Price</th>
+			<th>Description</th>
 			<th></th>
 		</tr>
 		</thead>
@@ -21,6 +23,8 @@
 				<td><?=$rs['id']?></td> 
 				<td><?=$rs['Quantity']?></td>
 				<td><?=$rs['Item']?></td>
+				<td><?=$rs['Price']?></td>
+				<td><?=$rs['Description']?></td>
 				<td>
 					<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
 					<a class="glyphicon glyphicon-pencil" href="?action=edit&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
