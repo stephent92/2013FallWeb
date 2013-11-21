@@ -73,6 +73,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	<script type="text/javascript">
 	$(function(){
+		var curDialogAction = null;
 		var templateRow = Handlebars.compile($("#row-template").html());
         Handlebars.registerPartial("row-template", templateRow);                                
         var tableTemplate = Handlebars.compile($("#tbody-template").html());
@@ -86,6 +87,7 @@
         });
        
        	$("#add-link").click(function(){
+       		curDialogAction = "add";
        		ShowDialog(this.href);
        		return false;
        	});
@@ -94,6 +96,7 @@
             if($(this).closest("tr").hasClass("success2")){
                 HideDialog();
             }else{
+            	curDialogAction = "update";
                 ShowDialog(this.href, $(this).closest("tr"));
             }
             
@@ -112,7 +115,11 @@
                     		.closest('.form-group').addClass('has-error');
                     }                                        
 	            }else{
-                    $(".success2").html(templateRow(results.model));
+	            	if(curDialogAction == "add"){
+	            		
+	            	}else{
+	            		$(".success2").html(templateRow(results.model));
+	            	}
                     toastr.success("Your record has been saved!", "Success");
 	            }
                     
