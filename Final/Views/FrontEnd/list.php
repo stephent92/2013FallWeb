@@ -14,6 +14,7 @@
 				</div>
 				<ul class="pager">
 					<li class="previous"><a href="?action=details&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal">$<?=$rs['Price']?></a></li>
+					<li class="previous"><a href="#">Purchase</a></li>
 				</ul>
 			</div>
 		</div>
