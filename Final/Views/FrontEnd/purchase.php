@@ -54,8 +54,8 @@
 
 <script type="text/javascript">
 	$(function(){
-		$("#Value").val("<?=$modelBuy['Price']?>");
+		$("#Value").val(<?=$modelBuy['Price']?>);
 		$("#Users_id").val(<?=$model['Users_id']?>);
 		$("#TrackingNumber").val(<?=rand()?>);
-	})
+	});
 </script>

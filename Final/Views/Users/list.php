@@ -144,6 +144,6 @@
             $("#table-wrapper").removeClass("col-md-6").addClass("col-md-12");
             $("#details").html('');
         }
-    })
+    });
     </script>
 <? } ?>
