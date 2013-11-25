@@ -12,6 +12,14 @@ switch ($action) {
 		break;
 		
 	case 'purchase':
+        $model = Orders::Blank();
+		$modelBuy = Inventory::Get($_REQUEST['id']);
+        $view = 'purchase.php';
+		$title = "Purchase Item: $modelBuy[Item]";
+		break;
+		
+	case 'save':
+		print_r($_REQUEST);
 		$errors = Orders::Validate($_REQUEST);
         if(!$errors){
          	$errors = Orders::Save($_REQUEST);
@@ -21,8 +29,7 @@ switch ($action) {
             die(); 
         }
         $model = $_REQUEST;
-        $view = 'list.php';
-		$title = "Purchase Item: $model[Item]";
+        $view = 'purchase.php';
 		break;
 		
 	default:

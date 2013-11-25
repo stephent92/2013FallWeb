@@ -68,8 +68,7 @@ class Orders
             return false;
         }else
         {
-            return $errors;
-                        
+            return $errors;                   
         }
     }
     

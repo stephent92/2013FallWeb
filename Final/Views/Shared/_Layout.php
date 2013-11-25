@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 	
     <title>My Website - <?=@$title?></title>
-    <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.1/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/flatly/bootstrap.min.css" rel="stylesheet">
 
 	<style type="text/css">
     	body { padding-top: 70px; }
