@@ -5,7 +5,7 @@
 	    <h4 class="modal-title"><?=$title?></h4>
 	  </div>
 	  <div class="modal-body">
-	    <? include $view; ?>
+	    <p><? include $view; ?></p>
 	  </div>
 	  <div class="modal-footer">
 	  	<button type="button" class="btn btn-success" >Purchase</button>

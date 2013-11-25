@@ -11,6 +11,20 @@ switch ($action) {
 		$title = "Details For: $model[Item]";
 		break;
 		
+	case 'purchase':
+		$errors = Orders::Validate($_REQUEST);
+        if(!$errors){
+         	$errors = Orders::Save($_REQUEST);
+        }                  
+        if(!$errors){
+            header("Location: ?");
+            die(); 
+        }
+        $model = $_REQUEST;
+        $view = 'list.php';
+		$title = "Purchase Item: $model[Item]";
+		break;
+		
 	default:
 		$model = Inventory::Get();
 		$view = 'list.php';
