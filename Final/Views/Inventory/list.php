@@ -13,8 +13,8 @@
 			<th>Quantity</th>
 			<th>Item</th>
 			<th>Price</th>
-			<th>Price</th>
 			<th>Category</th>
+			<th>Description</th>
 			<th></th>
 		</tr>
 		</thead>
