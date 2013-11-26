@@ -17,11 +17,11 @@ class Inventory
 		$row2 = Inventory::Encode($row, $conn);
 		if($row['id']){
 			$sql = 	" UPDATE Inventory "
-				.  	" Set Quantity='$row2[Quantity]', Item='$row2[Item]', Price='$row2[Price]', Description='$row2[Description]', Img='$row2[Img]' "
+				.  	" Set Quantity='$row2[Quantity]', Item='$row2[Item]', Price='$row2[Price]', Description='$row2[Description]', Img='$row2[Img]', Category='$row2[Category]' "
 				.  	" WHERE id=$row2[id] ";
 		}else{
-			$sql =	" Insert Into Inventory (Quantity, Item, Price, Description, Img) "
-				.	" Values ('$row2[Quantity]', '$row2[Item]', '$row2[Price]', '$row2[Description]', '$row2[Img]') ";
+			$sql =	" Insert Into Inventory (Quantity, Item, Price, Description, Img, Category) "
+				.	" Values ('$row2[Quantity]', '$row2[Item]', '$row2[Price]', '$row2[Description]', '$row2[Img]', '$row2[Category]') ";
 		}
 		
 		$conn->query($sql);
@@ -53,7 +53,7 @@ class Inventory
 	
 	static public function Blank()
     {
-        return array('id'=>null, 'Quantity'=>null, 'Item'=>null, 'Price'=>null);
+        return array('id'=>null, 'Quantity'=>null, 'Item'=>null, 'Price'=>null, 'Category'=>null);
     }
 
     static public function Validate($row)
@@ -62,6 +62,7 @@ class Inventory
         if(!$row['Quantity']) $errors['Quantity']=" is required";
         if(!$row['Item']) $errors['Item']=" is required";
         if(!$row['Price']) $errors['Price']=" is required";
+		if(!$row['Category']) $errors['Category']=" is required";
 		
         if(count($errors) == 0)
         {

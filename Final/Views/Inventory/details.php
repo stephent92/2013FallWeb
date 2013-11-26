@@ -10,6 +10,8 @@
 		<dd><?=$model['Price']?></dd>
 		<dt>Description</dt>
 		<dd><?=$model['Description']?></dd>
+		<dt>Category</dt>
+		<dd><?=$model['Category']?></dd>
 		<dt>created_at</dt>
 		<dd><?=$model['created_at']?></dd>
 	</dl>

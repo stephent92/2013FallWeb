@@ -1,8 +1,8 @@
 <div class="container">
 	<div id="category-list">
 		<ul class="nav nav-pills" data-bind="foreach: categories">
-			<li data-bind="css: { active: currentCategory}">
-				<a href="#" data-bind="text: Name"></a>
+			<li data-bind="css: { active: currentCategory == $data}">
+				<a href="#" data-bind="text: Name, click: $root.selectCategory"></a>
 			</li>
 		</ul>
 	</div>
