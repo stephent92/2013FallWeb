@@ -15,7 +15,6 @@ switch ($action) {
 		break;
 		
 	default:
-		//$model = Users::Get();
 		$view = 'home.php';
 		$title = 'Users';
 		break;

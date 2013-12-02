@@ -6,9 +6,15 @@
 			</li>
 		</ul>
 	</div>
-	<div id="item-list">
-		
+	
+	<div data-bind="foreach: products" id="item-list">
+		<div class="col-sm-3">
+			<div class="well">
+				<h5 data-bind="text: Name"></h5>
+			</div>
+		</div>
 	</div>
+	
 	<div id="shopping-cart-list">
 		
 	</div>
@@ -16,7 +22,7 @@
 
 <script type="text/html" id="shopping-cart-template">
 	<span class="glyphicon glyphicon-shopping-cart"></span>
-	Cart
+	<a href="#">Cart</a>
 	<span class="badge">0</span>
 </script>
 
@@ -27,18 +33,22 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.js"></script>
 	<script type="text/javascript">
 	$(function(){
-		$("#shopping-cart").html($("shopping-cart-template").html());
+		$("#shopping-cart").html($("#shopping-cart-template").html());
 		
 		var vm = {
 			categories: ko.observableArray(),
+			products: ko.observableArray(),
 			currentCategory: ko.observable(),
 			
 			selectCategory: function(){
-				vm.currentCategory(this);
+				$.getJson("?action=products&format=json", { CategoryId: this.id },function(results){
+					vm.products(results.model);
+				});
 			}
-		};
+		}
 		ko.applyBindings(vm);
-		$.getJson('?action=categories&format=json', null, function(results){
+		
+		$.getJson("?action=categories&format=json", function(results){
 			vm.categories(results.model);
 		});
 	});

@@ -25,7 +25,7 @@ switch ($action) {
          	$errors = Orders::Save($_REQUEST);
         }                  
         if(!$errors){
-            header("Location: ?");
+            header("Location: ?action=purchase&id=$_REQUEST[id]");
             die(); 
         }
         $model = $_REQUEST;
