@@ -11,19 +11,16 @@
 		<div class="col-sm-3">
 			<div class="well">
 				<h5 data-bind="text: Name"></h5>
+				<a data-bind="attr: { href: '?action=addToCart&id=' + id}">Add To Cart</a>
 			</div>
 		</div>
-	</div>
-	
-	<div id="shopping-cart-list">
-		
 	</div>
 </div>
 
 <script type="text/html" id="shopping-cart-template">
 	<span class="glyphicon glyphicon-shopping-cart"></span>
 	<a href="#">Cart</a>
-	<span class="badge">0</span>
+	<span class="badge"><? $cart = $_SESSION['cart']; echo count($cart); ?></span>
 </script>
 
 <? function Scripts(){ ?>
