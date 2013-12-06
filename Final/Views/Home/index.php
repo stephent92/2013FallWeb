@@ -8,11 +8,11 @@ $errors = null;
 
 switch ($action) {
 	case 'products':
-		$model = Products::GetByCategory($_REQUEST['CategoryId']);
+		$model = Inventory::GetByCategory($_REQUEST['Categories_id']);
 		break;
 		
 	case 'categories':
-		$model = Products::GetCategories();
+		$model = Inventory::GetCategories();
 		break;
 		
 	case 'addToCart':

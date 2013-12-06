@@ -16,6 +16,20 @@ class Inventory
 		}
 	}
 	
+	static public function GetByCategory($Categoryid)
+	{
+		return fetch_all("SELECT * FROM Inventory WHERE 'Categories_id'=$Categoryid");
+	}
+	
+	static public function GetCategories($id=null)
+	{
+		if(isset($id)){
+			return fetch_one("SELECT * FROM Categories WHERE id=$id");
+		}else{
+			return fetch_all('SELECT * FROM Categories');
+		}
+	}
+	
 	static public function Save($row)
 	{
 		$conn = GetConnection();

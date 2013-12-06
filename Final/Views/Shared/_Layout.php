@@ -43,9 +43,9 @@
 	                <li><a href="../Wishlist">Wishlist</a></li>
 	                <li class="divider"></li>
 	                <li class="dropdown-header">Other</li>
+	               	<li><a href="../Categories">Categories</a></li>
 	                <li><a href="../Keywords">Keywords</a></li>
 	                <li><a href="../Suppliers">Suppliers</a></li>
-	                <li><a href="../Categories">Categories</a></li>
 	              </ul>
 	            </li>
             </ul>

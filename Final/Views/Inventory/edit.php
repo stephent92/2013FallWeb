@@ -38,13 +38,6 @@
 				<? if(isset($errors['Price'])): ?><span class = "error"><?=$errors['Price'] ?> </span> <? endif;?>
 			</div>
 		</div>
-		<div class="form-group <?=isset($errors['Categories_id']) ? 'has error' : '' ?>">
-			<label for="Categories_id" class="col-sm-2 control-label">Category</label>
-			<div class="col-sm-10">
-				<input type="text" name="Categories_id" id="Categories_id" placeholder="Category" class="form-control" value="<?=$model['Categories_id']?>"/>
-				<? if(isset($errors['Categories_id'])): ?><span class = "error"><?=$errors['Categories_id'] ?> </span> <? endif;?>
-			</div>
-		</div>
 		<div class="form-group <?=isset($errors['Description']) ? 'has error' : '' ?>">
 			<label for="Description" class="col-sm-2 control-label">Description</label>
 			<div class="col-sm-10">
@@ -57,6 +50,17 @@
 			<div class="col-sm-10">
 				<input type="text" name="Img" id="Img" placeholder="Img" class="form-control" value="<?=$model['Img']?>"/>
 				<? if(isset($errors['Img'])): ?><span class = "error"><?=$errors['Img'] ?> </span> <? endif;?>
+			</div>
+		</div>
+		<div class="form-group <?=isset($errors['Categories_id']) ? 'has error' : '' ?>">
+			<label for="Categories_id" class="col-sm-2 control-label">Category</label>
+			<div class="col-sm-10">
+				<select name="Categories_id" id="Categories_id" class="form-control" >
+					<? foreach(Categories::Get() as $keywordRs): ?>
+						<option value="<?=$keywordRs['id']?>"><?=$keywordRs['Category']?></option>
+					<? endforeach; ?>
+				</select>
+				<? if(isset($errors['Categories_id'])): ?><span class = "error"><?=$errors['Categories_id'] ?> </span> <? endif;?>
 			</div>
 		</div>
 		<div class="form-group">
