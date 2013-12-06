@@ -2,19 +2,15 @@
 
 <div class="container">
 	
-	<h2>Inventory</h2>
+	<h2>Category</h2>
 	
-	<a href="?action=new">Add Item</a>
-	
+	<a href="?action=new">Add Category</a>
+
 	<table class="table table-hover table-bordered table-striped">
 		<thead>
 		<tr>
 			<th>ID</th>
-			<th>Quantity</th>
-			<th>Item</th>
-			<th>Price</th>
 			<th>Category</th>
-			<th>Description</th>
 			<th></th>
 		</tr>
 		</thead>
@@ -22,11 +18,7 @@
 		<? foreach ($model as $rs): ?>
 			<tr>
 				<td><?=$rs['id']?></td> 
-				<td><?=$rs['Quantity']?></td>
-				<td><?=$rs['Item']?></td>
-				<td><?=$rs['Price']?></td>
-				<td><?=$rs['Category_Name']?></td>
-				<td><?=$rs['Description']?></td>
+				<td><?=$rs['Category']?></td>
 				<td>
 					<a class="glyphicon glyphicon-file" href="?action=details&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>
 					<a class="glyphicon glyphicon-pencil" href="?action=edit&id=<?=$rs['id']?>&format=dialog" data-toggle="modal" data-target="#myModal"></a>

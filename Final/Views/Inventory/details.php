@@ -11,7 +11,7 @@
 		<dt>Description</dt>
 		<dd><?=$model['Description']?></dd>
 		<dt>Category</dt>
-		<dd><?=$model['Category']?></dd>
+		<dd><?=$model['Categories_id']?></dd>
 		<dt>created_at</dt>
 		<dd><?=$model['created_at']?></dd>
 	</dl>

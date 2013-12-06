@@ -38,11 +38,11 @@
 				<? if(isset($errors['Price'])): ?><span class = "error"><?=$errors['Price'] ?> </span> <? endif;?>
 			</div>
 		</div>
-		<div class="form-group <?=isset($errors['Category']) ? 'has error' : '' ?>">
-			<label for="Category" class="col-sm-2 control-label">Category</label>
+		<div class="form-group <?=isset($errors['Categories_id']) ? 'has error' : '' ?>">
+			<label for="Categories_id" class="col-sm-2 control-label">Category</label>
 			<div class="col-sm-10">
-				<input type="text" name="Category" id="Category" placeholder="Category" class="form-control" value="<?=$model['Category']?>"/>
-				<? if(isset($errors['Category'])): ?><span class = "error"><?=$errors['Category'] ?> </span> <? endif;?>
+				<input type="text" name="Categories_id" id="Categories_id" placeholder="Category" class="form-control" value="<?=$model['Categories_id']?>"/>
+				<? if(isset($errors['Categories_id'])): ?><span class = "error"><?=$errors['Categories_id'] ?> </span> <? endif;?>
 			</div>
 		</div>
 		<div class="form-group <?=isset($errors['Description']) ? 'has error' : '' ?>">

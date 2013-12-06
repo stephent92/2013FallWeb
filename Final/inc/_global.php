@@ -13,6 +13,7 @@ include_once __DIR__ . '/../Models/PaymentMethods.php';
 include_once __DIR__ . '/../Models/Orders.php';
 include_once __DIR__ . '/../Models/UserTypes.php';
 include_once __DIR__ . '/../Models/Products.php';
+include_once __DIR__ . '/../Models/Categories.php';
 
 function GetConnection()
 {

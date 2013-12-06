@@ -7,7 +7,7 @@
 		<dt>Quantity in Stock: </dt>
 		<dd><?=$model['Quantity']?></dd>
 		<dt>Category: </dt>
-		<dd><?=$model['Category']?></dd>
+		<dd><?=$model['Categories_id']?></dd>
 		<dt>Item Description: </dt>
 		<dd><?=$model['Description']?></dd>
 	</dl>

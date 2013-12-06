@@ -27,6 +27,28 @@
           <a class="navbar-brand" href="../FrontEnd/">Home</a>
         </div>
         <div class="navbar-collapse collapse">
+        	<ul class="nav navbar-nav">
+	        	<li><a href="../Users">Users</a></li>
+	        	<li><a href="../Inventory">Inventory</a></li>
+	        	<li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others<b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	                <li class="dropdown-header">User Info</li>
+	                <li><a href="../Addresses">Addresses</a></li>
+	                <li><a href="../ContactMethods">Contact Methods</a></li>
+	                <li><a href="../Orders">Orders</a></li>
+	                <li><a href="../PaymentMethods">Payment Methods</a></li>
+	                <li><a href="../Feedback">User Feedback</a></li>
+	                <li><a href="../UserTypes">User Types</a></li>
+	                <li><a href="../Wishlist">Wishlist</a></li>
+	                <li class="divider"></li>
+	                <li class="dropdown-header">Other</li>
+	                <li><a href="../Keywords">Keywords</a></li>
+	                <li><a href="../Suppliers">Suppliers</a></li>
+	                <li><a href="../Categories">Categories</a></li>
+	              </ul>
+	            </li>
+            </ul>
           <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Stephen Toth</a></p>
         </div>
       </div>
