@@ -20,7 +20,7 @@
 		<div class="form-group <?=isset($errors['Category']) ? 'has error' : '' ?>">
 			<label for="Category" class="col-sm-2 control-label">Category</label>
 			<div class="col-sm-10">
-				<input type="text" name="Category" id="Category" placeholder="User Type" class="form-control" value="<?=$model['Category']?>"/>
+				<input type="text" name="Category" id="Category" placeholder="Category" class="form-control" value="<?=$model['Category']?>"/>
 				<? if(isset($errors['Category'])): ?><span class = "error"><?=$errors['Category'] ?> </span> <? endif;?>
 			</div>
 		</div>
