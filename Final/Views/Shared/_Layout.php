@@ -49,7 +49,7 @@
 	              </ul>
 	            </li>
             </ul>
-          <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Stephen Toth</a></p>
+          <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link"><? $user=Auth::GetUser(); echo $user['LastName']; ?></a></p>
         </div>
       </div>
     </div>

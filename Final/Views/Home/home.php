@@ -8,7 +8,10 @@
     <div data-bind="foreach: products" >
         <div class="col-sm-3">
             <div class="well">
-                <h5 data-bind="text: Item" ></h5>
+            	<img alt="image" data-bind="attr: {src: Img}" width="128"/>
+                <h4 data-bind="text: Item" ></h4>
+                <p data-bind="text: Description"></p>
+                $<span data-bind="text: Price"></span>
                 <a data-bind="attr: { href: '?action=addToCart&id=' + id} ">Add To Cart</a>
             </div>
         </div>
