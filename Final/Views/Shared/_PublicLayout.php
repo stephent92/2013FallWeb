@@ -17,7 +17,7 @@
 
   <body>
   	<header class="container">
-  		<h1>My Website</h1>
+  		<h1>Our Products</h1>
   	</header>
   	<div class="container">
   	<div class="navbar navbar-default">
@@ -30,12 +30,8 @@
           <a class="navbar-brand" href="../Home/">Home</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-          	<li class="dropdown">
-          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
-          	</li>
-          </ul>
-          <p class="navbar-text pull-right" id="shopping-cart"><a href="#" class="navbar-link">Cart</a></p>
+        	<ul class="nav navbar-nav"><li><a href="../FrontEnd/">Front End</a></li></ul>
+			<p class="navbar-text pull-right" id="shopping-cart"><a href="#" class="navbar-link">Cart</a></p>
         </div>
       </div>
     </div>

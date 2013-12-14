@@ -24,10 +24,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../FrontEnd/">Home</a>
+          <a class="navbar-brand" href="../FrontEnd/">Front End</a>
         </div>
         <div class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
+        		<li><a href="../Home/">Home</a></li>
 	        	<li><a href="../Users">Users</a></li>
 	        	<li><a href="../Inventory">Inventory</a></li>
 	        	<li class="dropdown">
