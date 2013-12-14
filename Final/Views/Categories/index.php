@@ -3,6 +3,7 @@ include_once '../../inc/_global.php';
 
 @$action = $_REQUEST['action'];
 @$format = $_REQUEST['format'];
+$errors = null;
 
 switch ($action) {
 	case 'details':
@@ -23,12 +24,18 @@ switch ($action) {
          	$errors = Categories::Save($_REQUEST);
         }                  
         if(!$errors){
-            header("Location: ?");
-            die(); 
+        	if($format == 'plain' || $format == 'json'){
+        		$view = 'item.php';
+				$rs = $model = Categories::Get($_REQUEST['id']);
+        	}else{
+        		header("Location: ?status=Saved&id=$_REQUEST[id]");
+            	die(); 
+        	}
+        }else{
+       		$model = $_REQUEST;
+        	$view = 'edit.php';
+			$title = "Edit: $model[Category]";
         }
-        $model = $_REQUEST;
-        $view = 'edit.php';
-		$title = "Edit: $model[Category]";
 		break;
 		
 	case 'edit':
@@ -62,6 +69,14 @@ switch ($format) {
 		include '../Shared/_DialogLayout.php';
 		break;
 	
+	case 'plain':
+    	include $view;
+    	break;
+ 
+	case 'json':
+		echo json_encode(array('model' => $model, 'errors' => $errors));
+		break;
+		
 	default:
 		include '../Shared/_Layout.php';
 		break;

@@ -3,12 +3,13 @@ include_once '../../inc/_global.php';
 
 @$action = $_REQUEST['action'];
 @$format = $_REQUEST['format'];
+$errors = null;
 
 switch ($action) {
 	case 'details':
 		$model = Orders::Get($_REQUEST['id']);
 		$view = 'details.php';
-		$title = "Details For Order: $model[id]";
+		$title = "Details For Order For User: $model[Users_id]";
 		break;
 	
 	case 'new':
@@ -23,18 +24,24 @@ switch ($action) {
          	$errors = Orders::Save($_REQUEST);
         }                  
         if(!$errors){
-            header("Location: ?");
-            die(); 
+        	if($format == 'plain' || $format == 'json'){
+        		$view = 'item.php';
+				$rs = $model = Orders::Get($_REQUEST['id']);
+        	}else{
+        		header("Location: ?status=Saved&id=$_REQUEST[id]");
+            	die(); 
+        	}
+        }else{
+       		$model = $_REQUEST;
+        	$view = 'edit.php';
+			$title = "Edit Order For User: $model[Users_id]";
         }
-        $model = $_REQUEST;
-        $view = 'edit.php';
-		$title = "Edit Order: $model[id]";
 		break;
 		
 	case 'edit':
 		$model = Orders::Get($_REQUEST['id']);
 		$view = 'edit.php';
-		$title = "Edit Order: $model[id]";
+		$title = "Edit Order For User: $model[Users_id]";
 		break;
 		
 	case 'delete':
@@ -47,7 +54,7 @@ switch ($action) {
 		}
 		$model = Orders::Get($_REQUEST['id']);
 		$view = 'delete.php';
-		$title = "Delete Order: $model[id]";
+		$title = "Delete Order For User: $model[Users_id]";
 		break;
 		
 	default:
@@ -62,6 +69,14 @@ switch ($format) {
 		include '../Shared/_DialogLayout.php';
 		break;
 	
+	case 'plain':
+    	include $view;
+    	break;
+ 
+	case 'json':
+		echo json_encode(array('model' => $model, 'errors' => $errors));
+		break;
+		
 	default:
 		include '../Shared/_Layout.php';
 		break;

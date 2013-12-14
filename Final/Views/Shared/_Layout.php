@@ -44,7 +44,6 @@
 	                <li class="divider"></li>
 	                <li class="dropdown-header">Other</li>
 	               	<li><a href="../Categories">Categories</a></li>
-	                <li><a href="../Keywords">Keywords</a></li>
 	                <li><a href="../Suppliers">Suppliers</a></li>
 	              </ul>
 	            </li>

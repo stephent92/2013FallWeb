@@ -23,12 +23,18 @@ switch ($action) {
          	$errors = Suppliers::Save($_REQUEST);
         }                  
         if(!$errors){
-            header("Location: ?");
-            die(); 
+        	if($format == 'plain' || $format == 'json'){
+        		$view = 'item.php';
+				$rs = $model = Suppliers::Get($_REQUEST['id']);
+        	}else{
+        		header("Location: ?status=Saved&id=$_REQUEST[id]");
+            	die(); 
+        	}
+        }else{
+       		$model = $_REQUEST;
+        	$view = 'edit.php';
+			$title = "Edit: $model[Supplier]";
         }
-        $model = $_REQUEST;
-        $view = 'edit.php';
-		$title = "Edit: $model[Supplier]";
 		break;
 		
 	case 'edit':
@@ -62,6 +68,14 @@ switch ($format) {
 		include '../Shared/_DialogLayout.php';
 		break;
 	
+	case 'plain':
+    	include $view;
+    	break;
+ 
+	case 'json':
+		echo json_encode(array('model' => $model, 'errors' => $errors));
+		break;
+		
 	default:
 		include '../Shared/_Layout.php';
 		break;
