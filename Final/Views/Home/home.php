@@ -47,7 +47,7 @@
             	<img alt="image" data-bind="attr: {src: Img}" width="128"/>
                 <h4 data-bind="text: Item" ></h4>
                 <p data-bind="text: Description"></p>
-                <button class="btn btn-success">$<span data-bind="text: Price"></span></button>
+                <button class="btn btn-info">$<span data-bind="text: Price"></span></button>
                 <button class="btn btn-success pull-right" data-bind="click: $root.addToCart">
                     <span class="glyphicon glyphicon-shopping-cart"></span>
                     Add To Cart
