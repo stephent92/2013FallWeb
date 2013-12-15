@@ -30,7 +30,27 @@
           <a class="navbar-brand" href="../Home/">Home</a>
         </div>
         <div class="navbar-collapse collapse">
-        	<ul class="nav navbar-nav"><li><a href="../FrontEnd/">Front End</a></li></ul>
+        	<ul class="nav navbar-nav"><li><a href="../FrontEnd/">Front</a></li>
+        	<li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others<b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	              	<li><a href="../Users"><b>Users</b></a></li>
+	                <li class="divider"></li>
+	                <li><a href="../Addresses">Addresses</a></li>
+	                <li><a href="../ContactMethods">Contact Methods</a></li>
+	                <li><a href="../Orders">Orders</a></li>
+	                <li><a href="../PaymentMethods">Payment Methods</a></li>
+	                <li><a href="../Feedback">User Feedback</a></li>
+	                <li><a href="../UserTypes">User Types</a></li>
+	                <li><a href="../Wishlist">Wishlist</a></li>
+	                <li class="divider"></li>
+	                <li><a href="../Inventory"><b>Inventory</b></a></li>
+	                <li class="divider"></li>
+	               	<li><a href="../Categories">Categories</a></li>
+	                <li><a href="../Suppliers">Suppliers</a></li>
+	              </ul>
+	            </li>
+	        </ul>
 			<p class="navbar-text pull-right" id="shopping-cart"><a href="#" class="navbar-link">Cart</a></p>
         </div>
       </div>

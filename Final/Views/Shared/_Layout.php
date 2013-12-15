@@ -24,17 +24,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../FrontEnd/">Front End</a>
+          <a class="navbar-brand" href="../FrontEnd/">Front</a>
         </div>
         <div class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
         		<li><a href="../Home/">Home</a></li>
-	        	<li><a href="../Users">Users</a></li>
-	        	<li><a href="../Inventory">Inventory</a></li>
 	        	<li class="dropdown">
 	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others<b class="caret"></b></a>
 	              <ul class="dropdown-menu">
-	                <li class="dropdown-header">User Info</li>
+	              	<li><a href="../Users"><b>Users</b></a></li>
+	                <li class="divider"></li>
 	                <li><a href="../Addresses">Addresses</a></li>
 	                <li><a href="../ContactMethods">Contact Methods</a></li>
 	                <li><a href="../Orders">Orders</a></li>
@@ -43,7 +42,8 @@
 	                <li><a href="../UserTypes">User Types</a></li>
 	                <li><a href="../Wishlist">Wishlist</a></li>
 	                <li class="divider"></li>
-	                <li class="dropdown-header">Other</li>
+	                <li><a href="../Inventory"><b>Inventory</b></a></li>
+	                <li class="divider"></li>
 	               	<li><a href="../Categories">Categories</a></li>
 	                <li><a href="../Suppliers">Suppliers</a></li>
 	              </ul>
