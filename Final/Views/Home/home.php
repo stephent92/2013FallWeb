@@ -24,7 +24,7 @@
         }
         #shopping-cart-list .scrolling {
                 overflow-y: scroll;
-                height: 90%;
+                height: 94%;
                 border-bottom: 1px solid black;
         }
         #shopping-cart-list img {
