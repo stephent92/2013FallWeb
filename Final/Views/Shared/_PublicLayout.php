@@ -51,7 +51,8 @@
 	              </ul>
 	            </li>
 	        </ul>
-			<p class="navbar-text pull-right" id="shopping-cart"><a href="#" class="navbar-link">Cart</a></p>
+	        <p class="navbar-text pull-right" id="shopping-cart"><a href="#" class="navbar-link">Cart</a></p>
+	        <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link"><b><? $user=Auth::GetUser(); echo $user['LastName']; ?></b></a></p>
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@
         }
         #shopping-cart-list .scrolling {
                 overflow-y: scroll;
-                height: 95%;
+                height: 90%;
                 border-bottom: 1px solid black;
         }
         #shopping-cart-list img {
@@ -48,7 +48,7 @@
                 <h4 data-bind="text: Item" ></h4>
                 <p data-bind="text: Description"></p>
                 <button class="btn btn-info">$<span data-bind="text: Price"></span></button>
-                <button class="btn btn-success pull-right" data-bind="click: $root.addToCart">
+                <button class="btn btn-success pull-right" id="buyItems" data-bind="click: $root.addToCart, value: id">
                     <span class="glyphicon glyphicon-shopping-cart"></span>
                     Add To Cart
                 </button>
@@ -62,8 +62,7 @@
         <div class="well well-sm clearfix">
             <img alt="item image" data-bind="attr: {src: Img}" />
             <h6 data-bind="text: Item"></h6>
-            <p data-bind="text: Description"></p>
-            $<span data-bind="text: Price"></span>
+            <button class="btn btn-info btn-sm">$<span data-bind="text: Price"></span></button>
             <button class="btn btn-warning btn-sm pull-right" data-bind="click: $root.removeFromCart">
                 <span class="glyphicon glyphicon-shopping-del"></span>
                 Remove
@@ -71,7 +70,8 @@
         </div>
     </div>
     <div>
-        Total: $ <span data-bind="text: cartTotal"></span>
+        <button class="btn btn-info btn-sm">Total: $ <span data-bind="text: cartTotal"></span></button>
+      	<a href="?action=purchase&id=<?=$model['id']?>" class="btn btn-success btn-sm">Purchase</a>
     </div>
 </div>
         

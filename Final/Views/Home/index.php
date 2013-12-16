@@ -23,7 +23,15 @@ switch ($action) {
 		die();
 		break;
 		
+	case 'purchase':
+        $model = Orders::Blank();
+		$modelBuy = Inventory::Get($_REQUEST['id']);
+        $view = 'purchase.php';
+		$title = "Purchase Item: $modelBuy[Item]";
+		break;
+		
 	default:
+		$model = Inventory::Get();
 		$view = 'home.php';
 		$title = 'Home';
 		break;
