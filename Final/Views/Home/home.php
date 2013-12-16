@@ -55,6 +55,8 @@
             </div>
         </div>
     </div>
+    
+    <br><input type='hidden' id="e1" style="width:300px" />
 </div>
 
 <div id="shopping-cart-list" class="closed" >
@@ -74,7 +76,7 @@
       	<a href="?action=purchase&id=<?=$model['id']?>" class="btn btn-success btn-sm">Purchase</a>
     </div>
 </div>
-        
+      
 <script type="text/html" id="shopping-cart-template">
         <span class="glyphicon glyphicon-shopping-cart"></span>
         <a href="#" class="navbar-link" data-bind="click: toggleCartList">Cart</a>
@@ -86,6 +88,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.4/select2.min.js"></script>
     <script type="text/javascript">
     $(function(){
          var vm = {
@@ -96,7 +99,7 @@
              categoryClicked: function() {
                  $.getJSON("?action=products&format=json", { Categories_id: this.id } ,function(results){
                      vm.products(results.model);
-             	})
+             	 })
          	 },
          	 addToCart: function(){
                  vm.cart.push(this);
@@ -123,6 +126,27 @@
 	     $.getJSON("?action=categories&format=json",function(results){
 	             vm.categories(results.model);
 	     })
+	     
+	     $('#e1').select2({
+		    placeholder: "Search for a city",
+            minimumInputLength: 1,
+            multiple: true,
+            ajax: {
+                url: "?action=FinalZIP&format=json",
+                dataType: 'json',
+                data: function(term){
+                    return {
+                        term: term,
+                        page_limit: 10
+                    };
+                },
+                results: function(data){
+                    return {
+                        results: data.city
+                    };
+                }
+            }
+		});
      });
      </script>
 <? } ?>

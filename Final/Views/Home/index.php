@@ -29,6 +29,10 @@ switch ($action) {
         $view = 'purchase.php';
 		$title = "Purchase Item: $modelBuy[Item]";
 		break;
+	
+	case 'FinalZIP':
+		$model = FinalZIP::Get();
+		break;
 		
 	default:
 		$model = Inventory::Get();
